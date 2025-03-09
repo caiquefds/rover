@@ -1,0 +1,27 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /rest
+logging:
+  level:
+    root: info
+    org:
+      springframework:
+      web: info
+management:
+  endpoint:
+    health:
+      show-components: always
+  endpoints:
+    web:
+      base-path: /v1/actuator
+      exposure:
+        include: actuator,logfile,metrics,health,info
+spring:
+  application:
+    name: Rover
+  banner:
+    location: classpath:banner.txt
+  output:
+    ansi:
+      enabled: ALWAYS
