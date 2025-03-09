@@ -4,10 +4,12 @@ import com.example.contaazul.rover.enums.CommandType;
 import com.example.contaazul.rover.enums.Direction;
 import com.example.contaazul.rover.model.Position;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
+@Slf4j
 @Service
 @NoArgsConstructor
 public class RoverCommandTurnLeft implements RoverCommand {
@@ -20,7 +22,9 @@ public class RoverCommandTurnLeft implements RoverCommand {
     @Override
     public Position execute(Integer x, Integer y, Direction direction) {
         direction = direction.left();
-        return new Position(x,y,direction, LocalDateTime.now());
+        Position position = new Position(x, y, direction, LocalDateTime.now());
+        log.info("Moved to {}.", position);
+        return position;
     }
 
 }

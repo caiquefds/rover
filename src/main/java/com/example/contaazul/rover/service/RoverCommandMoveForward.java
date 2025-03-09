@@ -1,14 +1,16 @@
 package com.example.contaazul.rover.service;
 
-import com.example.contaazul.rover.enums.Direction;
 import com.example.contaazul.rover.enums.CommandType;
+import com.example.contaazul.rover.enums.Direction;
 import com.example.contaazul.rover.error.exception.InvalidPositionException;
 import com.example.contaazul.rover.model.Position;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
+@Slf4j
 @Service
 @NoArgsConstructor
 public class RoverCommandMoveForward implements RoverCommand {
@@ -39,6 +41,8 @@ public class RoverCommandMoveForward implements RoverCommand {
         x = newX;
         y = newY;
 
-        return new Position(x,y,direction, LocalDateTime.now());
+        Position position = new Position(x, y, direction, LocalDateTime.now());
+        log.info("Moved to {}.", position);
+        return position;
     }
 }
