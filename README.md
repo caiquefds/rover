@@ -23,7 +23,7 @@ inicia na posição (0, 0, N) e pode receber comandos de movimento e rotação.
 
 1. **Clonar o repositório**
    ```bash
-   git clone https://github.com/seu-usuario/mars-rover-springboot.git
+   git clone https://github.com/caiquefds/rover.git
    ```
 2. **Construir o projeto**
    ```bash 
