@@ -38,6 +38,3 @@ inicia na posição (0, 0, N) e pode receber comandos de movimento e rotação.
     ```bash 
     java -jar target/mars-rover-0.0.1-SNAPSHOT.jar
     ```
-
-
-
