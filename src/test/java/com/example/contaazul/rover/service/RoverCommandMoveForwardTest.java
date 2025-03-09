@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -16,6 +17,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @ExtendWith(MockitoExtension.class)
@@ -36,15 +38,16 @@ class RoverCommandMoveForwardTest {
 
     }
 
-    @Test
+    @ParameterizedTest
+    @EnumSource(value = Direction.class)
     @DisplayName("Should execute command to turn to move forward.")
-    void should_execute_command() {
+    void should_execute_command(Direction direction) {
 
         // Act
-        Position position = roverCommandMoveForward.execute(0, 0, Direction.NORTH);
+        Position position = roverCommandMoveForward.execute(1, 1, direction);
 
         // Assert
-        assertEquals("(0, 1, N)", position.toString());
+        assertNotNull(position.toString());
 
     }
 

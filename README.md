@@ -36,5 +36,5 @@ inicia na posição (0, 0, N) e pode receber comandos de movimento e rotação.
     ```
    Via JAR (para ambiente de produção):
     ```bash 
-    java -jar target/mars-rover-0.0.1-SNAPSHOT.jar
+    java -jar target/rover-1.0.0.jar
     ```
